@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Create Account | CompHub</title>
+      <link rel="stylesheet" href="style2.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Readex+Pro:wght@160..700&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Readex+Pro:wght@160..700&display=swap"
+        rel="stylesheet"
+      />
+    </head>
+  </head>
+  <body>
+    <section id="nav" class="padding">
+      <div class="navbar flex">
+        <div class="logo-div">
+          <img src="images/comphub-logo.png" alt="CompHub Logo" />
+        </div>
+        <div class="nav-links">
+          <ul class="nav-list flex">
+            <a href="#"><li class="nav-item">HOME</li> </a>
+            <a href="#"><li class="nav-item">EXPLORE</li> </a>
+            <a href="#"><li class="nav-item">SEARCH</li> </a>
+            <a href="#"><li class="nav-item">COLLECTION</li> </a>
+            <a href="#"><li class="nav-item">ABOUT</li> </a>
+            <a href="profile.html"
+              ><li
+                class="nav-item"
+                onmouseover="display('.profile-icon-round')"
+                onmouseleave="hide('.profile-icon-round')"
+              >
+                <i class="fa-solid fa-user"></i>
+              </li>
+            </a>
+            <div class="profile-icon-round"></div>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <div class="create-account-container">
+      <h2>Create Account</h2>
+      <form onsubmit="createAccount(event)" method="post">
+        <label for="Name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="letter-space"
+          onchange="checkName(this)"
+          onblur="if(this.value==''){errorBorder(this,false);}"
+          required
+        />
+
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          class="letter-space"
+          onchange="checkUsername(this)"
+          onblur="if(this.value==''){errorBorder(this,false);}"
+          required
+        />
+
+        <label for="age">Age</label>
+        <input
+          type="number"
+          id="age"
+          name="age"
+          required
+          min="10"
+          oninput="checkAge(this)"
+          onblur="if(this.value==''){errorBorder(this,false);}"
+        />
+
+        <label for="profession">Profession</label>
+        <select
+          id="profession"
+          name="profession"
+          onchange="checkSpecify()"
+          required
+        >
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+          <option value="other">Other (please specify)</option>
+        </select>
+        <input
+          type="text"
+          id="other-profession"
+          name="other-profession"
+          placeholder="Specify your profession"
+          style="display: none"
+        />
+
+        <label for="phone">Phone Number</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          required
+          pattern="[0-9]{10}"
+          placeholder="10-digit number"
+          class="letter-space"
+          onblur="if(this.value==''){errorBorder(this,false);}"
+        />
+
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="letter-space"
+          oninput="checkPassword()"
+          onblur="if(this.value==''){errorBorder(this,false);}"
+          required
+        />
+        <ul class="password-rules">
+          <li id="rule1">
+            Password length must be atleast 8 characters and maximum 16
+          </li>
+          <li id="rule2">
+            Password must contain atleast one UPPERCASE character
+          </li>
+          <li id="rule3">Password must contain atleast one number</li>
+          <li id="rule4">
+            Password must contain atleast one special character
+          </li>
+        </ul>
+
+        <label for="confirm-password">Confirm Password</label>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm-password"
+          class="letter-space"
+          oninput="checkConfirmPassword(this)"
+          required
+          onblur="if(this.value==''){errorBorder(this,false);}"
+        />
+
+        <button type="submit">Create Account</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

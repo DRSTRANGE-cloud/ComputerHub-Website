@@ -1,0 +1,130 @@
+:root {
+    --color1: green;
+    --color2: white;
+    --color3: #D9D9D9;
+    --color4: black;
+    --color5: #545454;
+}
+
+.flex {
+    display: flex;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+#nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo-div img {
+    width: 100px;
+}
+
+.navbar {
+    justify-content: space-between;
+    padding: 2px 20px;
+}
+
+.nav-list {
+    list-style-type: none;
+    gap: 20px;
+    position: relative;
+
+    a {
+        color: var(--color4);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-shadow: 0px 0px 1px var(--color4);
+        color: var(--color1);
+    }
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Readex Pro", sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--color3);
+}
+
+.create-account-container {
+    width: 500px;
+    padding: 20px;
+    background-color: var(--color2);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 400px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color4);
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--color5);
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--color3);
+    border-radius: 4px;
+    background-color: var(--color2);
+    color: var(--color4);
+}
+
+form input:focus,
+form select:focus {
+    border-color: var(--color1);
+    outline: none;
+}
+
+.letter-space {
+    letter-spacing: 1px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--color1);
+    color: var(--color2);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #006400;
+    /* Darker shade of green for hover */
+}
+
+.password-rules {
+    list-style-type: none;
+    color: gray;
+    font-weight: 300;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: -31px;
+}
